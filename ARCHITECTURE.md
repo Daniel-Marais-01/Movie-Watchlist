@@ -3,7 +3,7 @@
 
 <h2>C4 Context Diagram:</h2>
 
-C4Context
+<p>C4Context
     title Movie Watchlist App - System Context
     Person(user, "User", "A person who uses the app to manage their movie watchlist.")
     System(movieWatchlistApp, "Movie Watchlist App", "A platform to track, organize, and discover movies and TV shows.")
@@ -13,7 +13,10 @@ C4Context
     Rel(user, movieWatchlistApp, "Uses")
     Rel(movieWatchlistApp, tmdbAPI, "Fetches movie details")
     Rel(movieWatchlistApp, firebase, "Stores user data and handles authentication")
+</p>
 
+[C4 Context Diagram](https://www.mermaidchart.com/raw/0d2b5e87-5197-4b14-8015-a503afbbdaf2?theme=light&version=v0.1&format=svg)
+    
 <h2>C4 Container Diagram:</h2> 
 
 C4Container
