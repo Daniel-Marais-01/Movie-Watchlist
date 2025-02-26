@@ -32,6 +32,8 @@ C4Container
     Rel(api, database, "Reads/Writes user data")
     Rel(api, tmdbAPI, "Fetches movie data")
 
+[C4 Container Diagram](https://www.mermaidchart.com/raw/5d9dba22-37c7-40c4-8a95-43332f1cec29?theme=light&version=v0.1&format=svg)
+
 <h2>C4 Component Diagram: </h2>
 
 C4Component
