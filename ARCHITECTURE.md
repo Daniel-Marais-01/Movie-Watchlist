@@ -9,6 +9,7 @@
     System(movieWatchlistApp, "Movie Watchlist App", "A platform to track, organize, and discover movies and TV shows.")
     System_Ext(tmdbAPI, "TMDb API", "Provides movie data like ratings, trailers, and cast information.")
     System_Ext(firebase, "Firebase", "A backend service for authentication and database management.")
+    
     Rel(user, movieWatchlistApp, "Uses")
     Rel(movieWatchlistApp, tmdbAPI, "Fetches movie details")
     Rel(movieWatchlistApp, firebase, "Stores user data and handles authentication")
