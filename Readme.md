@@ -2,3 +2,6 @@
 
 <h2>Description</h2>
 The Movie Watchlist app is a web-based application that helps users manage and track movies they want to watch. Users can add movies to a personalized watchlist, mark them as watched, and categorize them by genre or priority. The app will also feature user authentication, real-time updates, and optional movie recommendations.
+
+[Specifications](daniel-marais-02/SPECIFICATIONS.md)
+[ARCHITECTURES](daniel-marais-02/ARCHITECTURES.md)
