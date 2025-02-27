@@ -3,22 +3,36 @@
 
 <h2>C4 Context Diagram:</h2>
 
-<p>C4Context
+```mermaid
+C4Context
     title Movie Watchlist App - System Context
     Person(user, "User", "A person who uses the app to manage their movie watchlist.")
     System(movieWatchlistApp, "Movie Watchlist App", "A platform to track, organize, and discover movies and TV shows.")
     System_Ext(tmdbAPI, "TMDb API", "Provides movie data like ratings, trailers, and cast information.")
     System_Ext(firebase, "Firebase", "A backend service for authentication and database management.")
-    
+
     Rel(user, movieWatchlistApp, "Uses")
     Rel(movieWatchlistApp, tmdbAPI, "Fetches movie details")
     Rel(movieWatchlistApp, firebase, "Stores user data and handles authentication")
-</p>
 
-[C4 Context Diagram](https://www.mermaidchart.com/raw/0d2b5e87-5197-4b14-8015-a503afbbdaf2?theme=light&version=v0.1&format=svg)
-    
+    UpdateElementStyle(user, $fontColor="white", $bgColor="#1f77b4", $borderColor="#1f77b4")
+    UpdateElementStyle(movieWatchlistApp, $fontColor="white", $bgColor="#ff7f0e", $borderColor="#ff7f0e")
+    UpdateElementStyle(tmdbAPI, $fontColor="white", $bgColor="#2ca02c", $borderColor="#2ca02c")
+    UpdateElementStyle(firebase, $fontColor="white", $bgColor="#d62728", $borderColor="#d62728")
+
+    UpdateRelStyle(user, movieWatchlistApp, $textColor="grey", $lineColor="#17becf", $offsetY="-10")
+    UpdateRelStyle(movieWatchlistApp, tmdbAPI, $textColor="grey", $lineColor="#bcbd22", $offsetY="-10")
+    UpdateRelStyle(movieWatchlistApp, firebase, $textColor="grey", $lineColor="#7f7f7f", $offsetY="-10")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+
+
+
+```
+
 <h2>C4 Container Diagram:</h2> 
 
+```mermaid
 C4Container
     title Movie Watchlist App - Container Diagram
     System_Boundary(app, "Movie Watchlist App") {
@@ -32,13 +46,25 @@ C4Container
     Rel(api, database, "Reads/Writes user data")
     Rel(api, tmdbAPI, "Fetches movie data")
 
-[C4 Container Diagram](https://www.mermaidchart.com/raw/5d9dba22-37c7-40c4-8a95-43332f1cec29?theme=light&version=v0.1&format=svg)
+    UpdateElementStyle(webApp, $fontColor="white", $bgColor="#3498db", $borderColor="#2980b9")
+    UpdateElementStyle(api, $fontColor="white", $bgColor="#e74c3c", $borderColor="#c0392b")
+    UpdateElementStyle(database, $fontColor="white", $bgColor="#9b59b6", $borderColor="#8e44ad")
+    UpdateElementStyle(tmdbAPI, $fontColor="black", $bgColor="#f1c40f", $borderColor="#f39c12")
+
+    UpdateRelStyle(webApp, api, $textColor="grey", $lineColor="#1abc9c", $offsetY="-10")
+    UpdateRelStyle(api, database, $textColor="grey", $lineColor="#f39c12", $offsetY="-10")
+    UpdateRelStyle(api, tmdbAPI, $textColor="grey", $lineColor="#6f7f7f", $offsetY="-10")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+
+```
 
 <h2>C4 Component Diagram: </h2>
 
+```mermaid
 C4Component
     title Movie Watchlist App - Component Diagram
-    
+
     Container(webApp, "Web Application", "React", "Frontend interface where users interact with the app.") 
     Container(api, "API Server", "Node.js", "Handles backend logic.") 
 
@@ -50,7 +76,23 @@ C4Component
     Rel(watchlistComponent, api, "Manages watchlist items")
     Rel(movieInfoComponent, api, "Fetches movie data")
 
+    UpdateElementStyle(webApp, $fontColor="white", $bgColor="#3498db", $borderColor="#2980b9")
+    UpdateElementStyle(api, $fontColor="white", $bgColor="#e67e22", $borderColor="#d35400")
+    UpdateElementStyle(authComponent, $fontColor="white", $bgColor="#2ecc71", $borderColor="#27ae60")
+    UpdateElementStyle(watchlistComponent, $fontColor="white", $bgColor="#9b59b6", $borderColor="#8e44ad")
+    UpdateElementStyle(movieInfoComponent, $fontColor="white", $bgColor="#f1c40f", $borderColor="#f39c12")
+
+    UpdateRelStyle(authComponent, api, $textColor="grey", $lineColor="#1abc9c", $offsetY="-10")
+    UpdateRelStyle(watchlistComponent, api, $textColor="grey", $lineColor="#f39c12", $offsetY="-10")
+    UpdateRelStyle(movieInfoComponent, api, $textColor="grey", $lineColor="#3498db", $offsetY="-10")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+
+```
+
 <h2>C4 Deployment Diagram:</h2>
+
+```mermaid
 
 C4Deployment
     title Movie Watchlist App - Deployment Diagram
@@ -74,3 +116,4 @@ C4Deployment
     Rel(webApp, api, "Uses API for movie data and watchlist management")
     Rel(api, database, "Reads/Writes data to Firebase")
     Rel(api, tmdbAPI, "Fetches movie data from TMDb")
+
